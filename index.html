@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Sarah Valentina ❤️</title>
+    <style>
+        /* ESTILOS SIMPLES Y ROBUSTOS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Pantalla de Bienvenida */
+        #start-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: white;
+        }
+
+        #start-screen h1 {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        #start-screen p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+
+        #enter-btn {
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            background: white;
+            color: #ff6b6b;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        #enter-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contenido Principal (Oculto al inicio) */
+        #main-content {
+            display: none; /* Oculto por defecto */
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+
+        /* Corazón animado simple */
+        .heart-container {
+            font-size: 4rem;
+            color: #ff6b6b;
+            animation: beat 1s infinite alternate;
+            margin: 30px 0;
+        }
+
+        @keyframes beat {
+            to { transform: scale(1.2); }
+        }
+
+        /* Carta */
+        .letter {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: left;
+            padding: 20px;
+            background: #fff0f5;
+            border-radius: 15px;
+            border: 1px solid #ffd1dc;
+        }
+
+        .letter strong {
+            color: #d6336c;
+        }
+
+        /* Galería de fotos */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ff9a9e;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d6336c;
+            margin-top: 10px;
+        }
+
+        .photos-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .photos-row img {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Botón de música flotante */
+        #music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+    <!-- Fuente bonita -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Pantalla de Inicio -->
+    <div id="start-screen">
+        <h1>Sarah Valentina</h1>
+        <p>Un regalo especial de Jenier para ti</p>
+        <button id="enter-btn">Abrir Regalo ❤️</button>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div id="main-content">
+        
+        <!-- Corazón central -->
+        <div class="heart-container">❤️</div>
+        
+        <h2>Nuestra Historia</h2>
+        
+        <!-- Carta -->
+        <div class="letter">
+            <p>Todo comenzó en <strong>Free Fire</strong>, en la isla de entrenamiento para ser exactos.</p>
+            <p>Nunca imaginé que unas partidas casuales se convertirían en el amor de mi vida. Me enamoré de ti a través de una pantalla, Sarah. Eres eso que no sabía que iba a llegar, pero que necesitaba en mi vida.</p>
+            <p>Recuerdo esas desveladas hablando de cosas random, enviándonos videos de todo tipo, riendo y reflexionando de cada cosa que nos pasaba en el día a día. Me fui enamorando poco a poco de ti, de tu manera de ser, de ese corazón tan lindo y de cómo siempre me demostraste ser una persona auténtica y única.</p>
+            <p>No te quiero perder, mi cielo. Te quiero siempre en mi vida. Aunque la distancia nos separa, cada palabra tuya ha ganado mi corazón.</p>
+            <p>Tengo muchas ganas de conocerte, tocarte, besarte y mirarte a los ojos. Te amo con todo mi corazón. Este pequeño espacio es solo un reflejo de lo que siento por ti.</p>
+        </div>
+
+        <!-- Fotos: Tú, Corazón, Ella -->
+        <div class="gallery">
+            <div style="text-align: center;">
+                <img src="img/tu_foto.jpg" alt="Jenier" class="photo">
+                <div class="photo-label">Tú</div>
+            </div>
+            
+            <div class="heart-container" style="font-size: 3rem;">❤️</div>
+            
+            <div style="text-align: center;">
+                <img src="img/sarah_foto.jpg" alt="Sarah" class="photo">
+                <div class="photo-label">Ella</div>
+            </div>
+        </div>
+
+        <!-- Fotos de juego y juntos (2 fotos) -->
+        <div style="margin-top: 40px;">
+            <h3>Nuestros Momentos en Free Fire</h3>
+            <div class="photos-row">
+                <img src="img/juego1.jpg" alt="Juego 1">
+                <img src="img/juego2.jpg" alt="Juego 2">
+            </div>
+            <div class="photos-row">
+                <img src="img/juntos.jpg" alt="Juntos">
+            </div>
+        </div>
+
+        <footer>
+            Hecho con todo mi amor por <strong>Jenier Gereda</strong><br>
+            4 de Mayo, 2026
+        </footer>
+    </div>
+
+    <!-- Elemento de Audio -->
+    <audio id="bg-music" loop>
+        <source src="audio/cancion.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Lógica muy simple y segura
+        document.getElementById('enter-btn').addEventListener('click', function() {
+            // 1. Ocultar pantalla de inicio
+            document.getElementById('start-screen').style.display = 'none';
+            
+            // 2. Mostrar contenido principal
+            const content = document.getElementById('main-content');
+            content.style.display = 'block';
+            
+            // 3. Intentar reproducir música
+            const audio = document.getElementById('bg-music');
+            audio.volume = 0.5;
+            audio.play().catch(error => {
+                console.log("La música no se reprodujo automáticamente. Intenta hacer clic en el botón de abajo.");
+            });
+        });
+
+        // Botón de música flotante (para activar si falló el automático)
+        document.body.addEventListener('click', function() {
+            const audio = document.getElementById('bg-music');
+            if (audio.paused) {
+                audio.play();
+            }
+        }, { once: true }); // Solo una vez al primer clic en todo el sitio
+    </script>
+</body>
+</html>
