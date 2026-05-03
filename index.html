@@ -3,19 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Sarah Valentina el amor de mí vida! ❤️</title>
+    <title>Para Sarah Valentina | Mi Amor</title>
+    <!-- Fuentes Elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* ESTILOS SIMPLES Y ROBUSTOS */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-            color: #333;
-            margin: 0;
-            padding: 0;
-            text-align: center;
+        /* --- ESTILOS PREMIUM --- */
+        :root {
+            --primary: #d6336c;
+            --soft-pink: #ffe3e3;
+            --gold: #ffd700;
+            --text: #2c3e50;
         }
 
-        /* Pantalla de Bienvenida */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Lluvia de pétalos (CSS puro, sin JS complejo) */
+        .petals-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .petal {
+            position: absolute;
+            background: rgba(255, 182, 193, 0.6);
+            border-radius: 150% 0 150% 0;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translate(100px, 110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Pantalla de Inicio */
         #start-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -26,241 +56,307 @@
             align-items: center;
             z-index: 9999;
             color: white;
+            transition: opacity 1s ease;
         }
 
         #start-screen h1 {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 4rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            animation: floatTitle 3s ease-in-out infinite;
         }
 
-        #start-screen p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
+        @keyframes floatTitle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         #enter-btn {
-            padding: 15px 40px;
+            padding: 18px 50px;
             font-size: 1.5rem;
             background: white;
-            color: #ff6b6b;
+            color: var(--primary);
             border: none;
             border-radius: 50px;
             cursor: pointer;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
         #enter-btn:hover {
-            transform: scale(1.1);
-        }
-
-        /* Contenido Principal (Oculto al inicio) */
-        #main-content {
-            display: none; /* Oculto por defecto */
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 40px;
-        }
-
-        /* Corazón animado simple */
-        .heart-container {
-            font-size: 4rem;
-            color: #ff6b6b;
-            animation: beat 1s infinite alternate;
-            margin: 30px 0;
-        }
-
-        @keyframes beat {
-            to { transform: scale(1.2); }
-        }
-
-        /* Carta */
-        .letter {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            text-align: left;
-            padding: 20px;
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             background: #fff0f5;
-            border-radius: 15px;
-            border: 1px solid #ffd1dc;
         }
 
-        .letter strong {
-            color: #d6336c;
+        /* Contenido Principal */
+        #main-content {
+            display: none;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
         }
 
-        /* Galería de fotos */
-        .gallery {
+        /* Carta estilo papel real */
+        .letter-section {
+            background: #fff;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            position: relative;
+            margin-bottom: 60px;
+            transform: rotate(-1deg);
+            border: 1px solid #eee;
+        }
+        
+        .letter-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            opacity: 0.4;
+            pointer-events: none;
+            border-radius: 5px;
+        }
+
+        .letter-content {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: #444;
+            text-align: justify;
+            position: relative;
+            z-index: 2;
+        }
+
+        .letter-content strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .letter-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Galería Mejorada */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.4s, box-shadow 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(214, 51, 108, 0.3);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .photo-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Conexión Central (Tú - Corazón - Ella) */
+        .connection-row {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            margin: 40px 0;
+            gap: 40px;
+            margin: 60px 0;
             flex-wrap: wrap;
         }
 
-        .photo {
-            width: 180px;
-            height: 180px;
+        .circle-photo {
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #ff9a9e;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border: 5px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: transform 0.4s;
         }
 
-        .photo:hover {
-            transform: scale(1.05);
+        .circle-photo:hover {
+            transform: scale(1.1);
+            border-color: var(--primary);
         }
 
-        .photo-label {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #d6336c;
-            margin-top: 10px;
+        .heart-beat {
+            font-size: 4rem;
+            color: var(--primary);
+            animation: heartbeat 1.2s infinite;
         }
 
-        .photos-row {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .photos-row img {
-            width: 150px;
-            height: 150px;
-            border-radius: 15px;
-            object-fit: cover;
-            border: 3px solid #fff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
         }
 
         footer {
-            margin-top: 50px;
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #666;
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #888;
+            border-top: 1px solid #eee;
         }
 
-        /* Botón de música flotante */
-        #music-control {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ff6b6b;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            display: none;
-            z-index: 1000;
+        /* Responsivo */
+        @media (max-width: 768px) {
+            #start-screen h1 { font-size: 3.5rem; }
+            .letter-section { padding: 30px; transform: rotate(0); }
+            .connection-row { gap: 20px; }
+            .circle-photo { width: 120px; height: 120px; }
+            .heart-beat { font-size: 3rem; }
         }
     </style>
-    <!-- Fuente bonita -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Lluvia de pétalos -->
+    <div class="petals-container" id="petals"></div>
+
     <!-- Pantalla de Inicio -->
     <div id="start-screen">
-        <h1>Sarah Valentina</h1>
-        <p>Un regalo especial de Jenier para ti</p>
-        <button id="enter-btn">Abrir Regalo ❤️</button>
+        <h1>ERES EL AMOR DE MÍ VIDA SARAH</h1>
+        <p style="font-size: 1.4rem; font-weight: 300; margin-bottom: 40px;">Un mes de amor, risas y un futuro increíble</p>
+        <button id="enter-btn">Feliz primer mes!❤️</button>
     </div>
 
     <!-- Contenido Principal -->
     <div id="main-content">
         
-        <!-- Corazón central -->
-        <div class="heart-container">❤️</div>
-        
-        <h2>FELIZ PRIMER MES MÍ PRINCESA CONSENTIDA🥹</h2>
-        
+        <!-- Conexión Central -->
+        <div class="connection-row">
+            <div style="text-align: center;">
+                <img src="img/tu_foto.jpg.jpg" alt="Jenier" class="circle-photo">
+                <p style="margin-top: 10px; font-weight: bold; color: var(--primary);">Jenier</p>
+            </div>
+            <div class="heart-beat">❤️</div>
+            <div style="text-align: center;">
+                <img src="img/sarah_foto.jpg.jpg" alt="Sarah" class="circle-photo">
+                <p style="margin-top: 10px; font-weight: bold; color: var(--primary);">Sarah</p>
+            </div>
+        </div>
+
         <!-- Carta -->
-        <div class="letter">
-            <p>Todo comenzó en <strong>Free Fire</strong>, en la isla de entrenamiento para ser exactos.</p>
-            <p>Nunca imaginé que unas partidas casuales se convertirían en el amor de mi vida. Me enamoré de ti a través de una pantalla, Sarah. Eres eso que no sabía que iba a llegar, pero que necesitaba en mi vida.</p>
-            <p>Recuerdo esas desveladas hablando de cosas random, enviándonos videos de todo tipo, riendo y reflexionando de cada cosa que nos pasaba en el día a día. Me fui enamorando poco a poco de ti, de tu manera de ser, de ese corazón tan lindo y de cómo siempre me demostraste ser una persona auténtica y única.</p>
-            <p>No te quiero perder, mi cielo. Te quiero siempre en mi vida. Aunque la distancia nos separa, cada palabra tuya ha ganado mi corazón.</p>
-            <p>Tengo muchas ganas de conocerte, tocarte, besarte y mirarte a los ojos. Te amo con todo mi corazón. Este pequeño espacio es solo un reflejo de lo que siento por ti.</p>
-        </div>
-
-        <!-- Fotos: Tú, Corazón, Ella -->
-        <div class="gallery">
-            <div style="text-align: center;">
-                <img src="img/tu_foto.jpg.jpg" alt="Jenier" class="photo">
-                <div class="photo-label">Tú</div>
+        <section class="letter-section">
+            <div class="letter-content">
+                <p>Todo comenzó en <strong>Free Fire</strong>, en la isla de entrenamiento para ser exactos. Nunca imaginé que unas partidas casuales se convertirían en el amor de mi vida. Me enamoré de ti a través de una pantalla, Sarah. Eres eso que no sabía que iba a llegar, pero que necesitaba en mi vida.</p>
+                <p>Recuerdo esas desveladas hablando de cosas random, enviándonos videos de todo tipo, riendo y reflexionando de cada cosa que nos pasaba en el día a día. Me fui enamorando poco a poco de ti, de tu manera de ser, de ese corazón tan lindo y de cómo siempre me demostraste ser una persona auténtica y única.</p>
+                <p>No te quiero perder, mi cielo. Te quiero siempre en mi vida. Aunque la distancia nos separa, cada palabra tuya ha ganado mi corazón.</p>
+                <p>Tengo muchas ganas de conocerte, tocarte, besarte y mirarte a los ojos. Te amo con todo mi corazón. Este pequeño espacio es solo un reflejo de lo que siento por ti.</p>
+                <p style="text-align: right; margin-top: 30px;"><strong>Con todo mi amor,<br>Jenier</strong></p>
             </div>
-            
-            <div class="heart-container" style="font-size: 3rem;">❤️</div>
-            
-            <div style="text-align: center;">
-                <img src="img/sarah_foto.jpg.jpg" alt="Sarah" class="photo">
-                <div class="photo-label">Ella</div>
-            </div>
-        </div>
+        </section>
 
-        <!-- Fotos de juego y juntos (2 fotos) -->
-        <div style="margin-top: 40px;">
-            <h3>Nuestros Momentos en Free Fire</h3>
-            <div class="photos-row">
+        <!-- Galería -->
+        <h2 style="text-align: center; font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--primary); margin-bottom: 40px;">Nuestros Momentos</h2>
+        
+        <div class="gallery-grid">
+            <div class="photo-card">
                 <img src="img/juego1.jpg.png" alt="Juego 1">
-                <img src="img/juego2.jpg.png" alt="Juego 2">
+                <div class="photo-title">Te Amo mi cachetonaa!</div>
             </div>
-            <div class="photos-row">
+            <div class="photo-card">
+                <img src="img/juego2.jpg.png" alt="Juego 2">
+                <div class="photo-title">Eres mí todooo!</div>
+            </div>
+            <div class="photo-card">
                 <img src="img/juntos.jpg.jpg" alt="Juntos">
+                <div class="photo-title">Dios, TÚ Y YO</div>
             </div>
         </div>
 
         <footer>
-            Hecho con todo mi amor por <strong>Jenier Gereda</strong><br>
-            4 de Mayo, 2026
+            Hecho con todo mi amor para tí<br>
+            04/04/2026, 4 de Mayo, 2026
         </footer>
     </div>
 
-    <!-- Elemento de Audio -->
+    <!-- Audio -->
     <audio id="bg-music" loop>
         <source src="audio/cancion.mp3.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-        // Lógica muy simple y segura
+        // Generar pétalos
+        const petalsContainer = document.getElementById('petals');
+        const petalCount = 30; // Cantidad de pétalos
+
+        for (let i = 0; i < petalCount; i++) {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 5 + 5 + 's'; // Entre 5 y 10s
+            petal.style.animationDelay = Math.random() * 5 + 's';
+            // Tamaño aleatorio
+            const size = Math.random() * 10 + 10;
+            petal.style.width = size + 'px';
+            petal.style.height = size + 'px';
+            petalsContainer.appendChild(petal);
+        }
+
+        // Lógica del botón
         document.getElementById('enter-btn').addEventListener('click', function() {
-            // 1. Ocultar pantalla de inicio
-            document.getElementById('start-screen').style.display = 'none';
-            
-            // 2. Mostrar contenido principal
+            const screen = document.getElementById('start-screen');
             const content = document.getElementById('main-content');
-            content.style.display = 'block';
-            
-            // 3. Intentar reproducir música
             const audio = document.getElementById('bg-music');
-            audio.volume = 0.5;
-            audio.play().catch(error => {
-                console.log("La música no se reprodujo automáticamente. Intenta hacer clic en el botón de abajo.");
-            });
+
+            // Efecto de desvanecimiento
+            screen.style.opacity = '0';
+            setTimeout(() => {
+                screen.style.display = 'none';
+                content.style.display = 'block';
+                
+                // Reproducir audio
+                audio.volume = 0.6;
+                audio.play().catch(e => console.log("Audio bloqueado, activar con clic"));
+                
+                // Asegurar que los pétalos se vean
+                petalsContainer.style.opacity = '1';
+            }, 1000);
         });
 
-        // Botón de música flotante (para activar si falló el automático)
+        // Fallback de audio
         document.body.addEventListener('click', function() {
             const audio = document.getElementById('bg-music');
             if (audio.paused) {
                 audio.play();
             }
-        }, { once: true }); // Solo una vez al primer clic en todo el sitio
+        }, { once: true });
     </script>
 </body>
 </html>
