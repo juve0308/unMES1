@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Sarah Valentina | Mi Amor</title>
-    <!-- Fuentes Elegantes -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Fuentes Elegantes y Legibles -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* --- ESTILOS PREMIUM --- */
+        /* --- ESTILOS PREMIUM ACTUALIZADOS --- */
         :root {
             --primary: #d6336c;
             --soft-pink: #ffe3e3;
@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif; /* Fuente base legible */
             background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
             color: var(--text);
             margin: 0;
@@ -25,7 +25,7 @@
             min-height: 100vh;
         }
 
-        /* Lluvia de pétalos (CSS puro, sin JS complejo) */
+        /* Lluvia de pétalos (CSS puro) */
         .petals-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -59,12 +59,15 @@
             transition: opacity 1s ease;
         }
 
+        /* TÍTULO PRINCIPAL: Fuente nueva y legible */
         #start-screen h1 {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'Playfair Display', serif; /* Cambiado aquí */
             font-size: 5rem;
             margin-bottom: 20px;
             text-shadow: 0 4px 10px rgba(0,0,0,0.2);
             animation: floatTitle 3s ease-in-out infinite;
+            font-weight: 700; /* Más grueso para mejor lectura */
+            letter-spacing: 1px;
         }
 
         @keyframes floatTitle {
@@ -85,6 +88,7 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
         }
 
         #enter-btn:hover {
@@ -177,11 +181,12 @@
         }
 
         .photo-title {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'Playfair Display', serif; /* Cambiado para legibilidad */
             font-size: 1.8rem;
             color: var(--primary);
             margin-top: 15px;
             text-align: center;
+            font-weight: 700;
         }
 
         /* Conexión Central (Tú - Corazón - Ella) */
@@ -250,9 +255,9 @@
 
     <!-- Pantalla de Inicio -->
     <div id="start-screen">
-        <h1>MÍ NIÑA CONSENTIDA</h1>
-        <p style="font-size: 1.4rem; font-weight: 300; margin-bottom: 40px;">Un mes de amor, risas y un futuro increíble</p>
-        <button id="enter-btn">Feliz primer mes!❤️</button>
+        <h1>MÍ PRINCESA CONSENTIDA</h1>
+        <p style="font-size: 1.4rem; font-weight: 300; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">Un mes de amor, risas y un futuro increíble</p>
+        <button id="enter-btn">FELIZ PRIMER MES!❤️</button>
     </div>
 
     <!-- Contenido Principal -->
@@ -262,12 +267,12 @@
         <div class="connection-row">
             <div style="text-align: center;">
                 <img src="img/tu_foto.jpg.jpg" alt="Jenier" class="circle-photo">
-                <p style="margin-top: 10px; font-weight: bold; color: var(--primary);">Jenier</p>
+                <p style="margin-top: 10px; font-weight: bold; color: var(--primary); font-family: 'Montserrat', sans-serif;">Jenier</p>
             </div>
             <div class="heart-beat">❤️</div>
             <div style="text-align: center;">
                 <img src="img/sarah_foto.jpg.jpg" alt="Sarah" class="circle-photo">
-                <p style="margin-top: 10px; font-weight: bold; color: var(--primary);">Sarah</p>
+                <p style="margin-top: 10px; font-weight: bold; color: var(--primary); font-family: 'Montserrat', sans-serif;">Sarah</p>
             </div>
         </div>
 
@@ -283,7 +288,7 @@
         </section>
 
         <!-- Galería -->
-        <h2 style="text-align: center; font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--primary); margin-bottom: 40px;">Nuestros Momentos</h2>
+        <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--primary); margin-bottom: 40px; font-weight: 700;">Nuestros Momentos</h2>
         
         <div class="gallery-grid">
             <div class="photo-card">
@@ -301,8 +306,8 @@
         </div>
 
         <footer>
-            Hecho con todo mi amor para tí<br>
-            04/04/2026, 4 de Mayo, 2026
+            Hecho con todo mi amor por Jenier Gereda<br>
+            4 de Mayo, 2026
         </footer>
     </div>
 
@@ -314,15 +319,14 @@
     <script>
         // Generar pétalos
         const petalsContainer = document.getElementById('petals');
-        const petalCount = 30; // Cantidad de pétalos
+        const petalCount = 30;
 
         for (let i = 0; i < petalCount; i++) {
             const petal = document.createElement('div');
             petal.classList.add('petal');
             petal.style.left = Math.random() * 100 + 'vw';
-            petal.style.animationDuration = Math.random() * 5 + 5 + 's'; // Entre 5 y 10s
+            petal.style.animationDuration = Math.random() * 5 + 5 + 's';
             petal.style.animationDelay = Math.random() * 5 + 's';
-            // Tamaño aleatorio
             const size = Math.random() * 10 + 10;
             petal.style.width = size + 'px';
             petal.style.height = size + 'px';
@@ -335,17 +339,12 @@
             const content = document.getElementById('main-content');
             const audio = document.getElementById('bg-music');
 
-            // Efecto de desvanecimiento
             screen.style.opacity = '0';
             setTimeout(() => {
                 screen.style.display = 'none';
                 content.style.display = 'block';
-                
-                // Reproducir audio
                 audio.volume = 0.6;
                 audio.play().catch(e => console.log("Audio bloqueado, activar con clic"));
-                
-                // Asegurar que los pétalos se vean
                 petalsContainer.style.opacity = '1';
             }, 1000);
         });
